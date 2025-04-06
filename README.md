@@ -1,6 +1,4 @@
 # 🔒 SCATMAN - Secure Chat Application
-
-![Belacom Technologies Logo](https://via.placeholder.com/150x50?text=Belacom+Tech)  
 *"Powered by paranoia and self-torture" - Apache 2.0 License*
 
 ## 🌟 Features
