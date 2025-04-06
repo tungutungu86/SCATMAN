@@ -1,37 +1,63 @@
-# 🛡️ SCATMAN Secure Terminal
-_Brought to you by Belacom Technologies // NaanStop Defense Division_  
-_“When silence isn't stealthy enough...”_
+# 🔒 SCATMAN - Secure Chat Application
+*"Powered by paranoia and self-torture" - Apache 2.0 License*
 
-## 🔥 Overview
-SCATMAN is a paranoid-and-self-torture-grade encrypted terminal communication system built with layered cryptographic defenses. Designed for secure, peer-to-peer messaging over TCP, this tool is ideal for 
-red teams, covert sysadmins, and anyone allergic to plaintext.
+## 🌟 Features
+- **Military-grade encryption** (AES-256-GCM)
+- **Secure key exchange** (Diffie-Hellman)
+- **File transfer** with user confirmation
+- **Version compatibility** (v3/v4)
+- **Replay attack protection**
 
-**Built-in technologies:**
-- AES-256-GCM symmetric encryption  
-- RSA-PSS digital signatures  
-- Ephemeral Diffie-Hellman key exchange  
-- HMAC integrity verification  
-- Forward secrecy with HKDF
+## 🚀 Quick Start
+### Prerequisites
+- Python 3.6+
+- Windows 10/11 (macOS/Linux compatible)
 
-## 🧪 Features
-- 🔐 End-to-end encrypted socket communication
-- 💥 Replay attack protection (timestamp & sequence validation)
-- 🧬 Ephemeral key exchange via Diffie-Hellman
-- 🧾 Message authenticity via RSA signatures
-- 🧠 MAC validation via SHA-256 HMAC
-- 🔁 Full-duplex communication with threading
-
-## 🛠️ Usage
-
-1. **Run `SCATMAN.py` on both endpoints.**
-
-2. Choose your role:
-   - `[1] Host` to wait for inbound connections
-   - `[2] Connect to peer` to connect to a target IP and port
-
-3. Chat securely.  
-   Type `/exit` to bail out like a ghost in the shell.
-
-## 💡 Example
 ```bash
-$ python3 SCATMAN.py
+# Install dependencies
+pip install cryptography pyDH
+```
+
+### Basic Usage
+1. **Host Mode**:
+   ```bash
+   python SCATMAN.py
+   [1] Host
+   Enter port: 5000
+   ```
+
+2. **Client Mode**:
+   ```bash
+   python SCATMAN.py
+   [2] Connect
+   IP: 192.168.1.x
+   Port: 5000
+   ```
+
+3. **Commands**:
+   - Regular chat: Just type messages
+   - File transfer: `!sendfile C:\path\to\file`
+   - Exit: `/exit`
+
+## 🔧 Technical Details
+| Component           | Implementation              |
+|---------------------|-----------------------------|
+| Key Exchange        | Diffie-Hellman (pyDH)       |
+| Encryption          | AES-256-GCM                 |
+| Key Derivation      | HKDF-SHA256                 |
+| Authentication      | HMAC-SHA256 (v3)            |
+
+## 🛠️ Troubleshooting
+```bash
+# Common fixes
+python -m pip install --upgrade pip  # Update pip
+set PYTHONUTF8=1                    # Fix encoding issues
+```
+
+## 📜 License
+Apache 2.0 - See Licence.md
+
+---
+> **Warning**  
+> This is for educational purposes only. Belacom Technologies assumes no liability for data breaches.
+
